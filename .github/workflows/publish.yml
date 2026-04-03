@@ -1,0 +1,9 @@
+steps:
+  - uses: actions/checkout@v4
+  - uses: quarto-dev/quarto-actions/setup@v2
+  - run: pip install jupyter -r requirements.txt
+  - uses: quarto-dev/quarto-actions/publish@v2
+    with:
+      target: gh-pages
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
